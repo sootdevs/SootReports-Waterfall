@@ -2,6 +2,8 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     java
+    idea
+    eclipse
     id("com.github.johnrengelman.shadow") version "7.0.0" apply false
 }
 
@@ -15,6 +17,20 @@ repositories {
 
 dependencies {
     compileOnly("io.github.waterfallmc", "waterfall-api", "1.16-R0.4-SNAPSHOT")
+}
+
+idea {
+    module {
+        isDownloadJavadoc = true
+        isDownloadSources = true
+    }
+}
+
+eclipse {
+    classpath {
+        isDownloadJavadoc = true
+        isDownloadSources = true
+    }
 }
 
 tasks.withType<ShadowJar> {
