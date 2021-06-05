@@ -1,0 +1,4 @@
+# SootReports-Waterfall Configuration File
+
+server-name: "A Minecraft Server"
+discord-webhook-url: "<Discord Webhook URL Here>"
