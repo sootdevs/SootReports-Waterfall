@@ -4,11 +4,13 @@ plugins {
     java
     idea
     eclipse
-    id("com.github.johnrengelman.shadow") version "7.0.0" apply false
+    id("com.github.johnrengelman.shadow") version "6.1.0" apply false
 }
 
 group = "dev.codeerror"
 version = "1.0"
+
+apply(plugin = "com.github.johnrengelman.shadow")
 
 repositories {
     mavenCentral()
