@@ -1,0 +1,4 @@
+name: SootReports-Waterfall
+main: dev.codeerror.sootreports.SootReports
+version: 1.0
+author: CodeError
