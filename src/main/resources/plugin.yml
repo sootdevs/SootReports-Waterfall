@@ -1,4 +1,48 @@
 name: SootReports-Waterfall
 main: dev.codeerror.sootreports.SootReports
 version: 1.0
+api-version: 1.16
+description: A custom player/bug reports and suggestions plugin for the Waterfall proxy. Programmed for SootMC.
 author: CodeError
+website: https://www.codeerror.dev/
+load: STARTUP
+commands:
+  report:
+    description: Report command for SootReports.
+    permission: sootreports.report
+    permission-message: §8[§1SootReports§8] §cYou do not have the appropriate permissions to perform this command.
+    usage: /report <player> <reason>
+  bug:
+    description: Bug command for SootReports.
+    permission: sootreports.bug
+    permission-message: §8[§1SootReports§8] §cYou do not have the appropriate permissions to perform this command.
+    usage: /bug <bug>
+  suggest:
+    description: Suggest command for SootReports.
+    permission: sootreports.suggest
+    permission-message: §8[§1SootReports§8] §cYou do not have the appropriate permissions to perform this command.
+    usage: /suggest <suggestion>
+permissions:
+  sootreports.*:
+    description: Grants access to all permission nodes in SootReports.
+    default: op
+    children:
+      sootreports.command.report: true
+      sootreports.command.bug: true
+      sootreports.command.suggest: true
+  sootreports.command.*:
+    description: Grants access to report, bug and suggest commands.
+    default: op
+    children:
+      sootreports.command.report: true
+      sootreports.command.bug: true
+      sootreports.command.suggest: true
+  sootreports.command.report:
+    description: Grants access to report command.
+    default: op
+  sootreports.command.bug:
+    description: Grants access to bug command.
+    default: op
+  sootreports.command.suggest:
+    description: Grants access to suggest command.
+    default: op
