@@ -15,12 +15,10 @@ apply(plugin = "com.github.johnrengelman.shadow")
 repositories {
     mavenCentral()
     maven("https://papermc.io/repo/repository/maven-public/")
-    maven("https://repo.opencollab.dev/maven-snapshots/")
 }
 
 dependencies {
     compileOnly("io.github.waterfallmc", "waterfall-api", "1.16-R0.4-SNAPSHOT")
-    compileOnly("org.geysermc", "connector", "1.2.1-SNAPSHOT") // Geyser
 }
 
 idea {
