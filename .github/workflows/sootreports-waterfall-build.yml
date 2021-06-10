@@ -1,0 +1,27 @@
+name: SootReports-Waterfall
+
+on: [push]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Clone SootReports-Waterfall Repository
+        uses: actions/checkout@v2
+        
+      - name: Set Up Java 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+        
+      - name: Build SootReports-Waterfall
+        run: chmod +x gradlew && ./gradlew build shadowJar --stacktrace
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: SootReports-Waterfall
+          path: build/libs/SootReports-Waterfall-1.0.jar
