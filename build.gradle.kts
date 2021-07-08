@@ -18,7 +18,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.github.waterfallmc", "waterfall-api", "1.16-R0.4-SNAPSHOT")
+    implementation("org.jetbrains:annotations:20.1.0")
+    compileOnly("io.github.waterfallmc", "waterfall-api", "1.17-R0.1-SNAPSHOT")
 }
 
 idea {

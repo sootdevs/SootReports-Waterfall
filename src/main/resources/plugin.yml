@@ -1,7 +1,7 @@
 name: SootReports-Waterfall
 main: dev.codeerror.sootreports.SootReports
 version: 1.0
-api-version: 1.16
+api-version: 1.17
 description: A custom player/bug reports and suggestions plugin for the Waterfall proxy. Programmed for SootMC.
 author: CodeError
 website: https://www.codeerror.dev/
