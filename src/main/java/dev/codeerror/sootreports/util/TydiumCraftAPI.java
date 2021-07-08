@@ -1,12 +1,14 @@
 package dev.codeerror.sootreports.util;
 
+import org.jetbrains.annotations.Nullable;
+
 public class TydiumCraftAPI {
 
-    private String uuid;
+    private final String uuid;
 
     public TydiumCraftAPI(String uuid) { this.uuid = uuid; }
 
-    public String getSkinURL(String type, String size, String flip) {
+    public String getSkinURL(@Nullable String type, @Nullable String size, @Nullable String flip) {
 
         String baseURL = "https://api.tydiumcraft.net/skin?uuid=" + this.uuid;
         StringBuilder urlBuilder = new StringBuilder(baseURL);
@@ -32,9 +34,18 @@ public class TydiumCraftAPI {
 
         }
 
-        if ((type.equals("body") || type.equals("head")) && (flip.equals("left") || flip.equals("right"))) {
+        if (flip != null && (type.equals("body") || type.equals("head"))) {
 
-            urlBuilder.append("&direction=").append(flip);
+            if ((flip.equals("left") || flip.equals("right"))) {
+
+                urlBuilder.append("&direction=").append(flip);
+
+            } else {
+
+                urlBuilder.append("&direction=right");
+
+            }
+
             return new String(urlBuilder);
 
         }
