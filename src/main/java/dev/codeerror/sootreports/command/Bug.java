@@ -6,7 +6,7 @@ import net.md_5.bungee.api.plugin.Command;
 
 public class Bug extends Command {
 
-    public Bug() { super("Bug"); }
+    public Bug() { super("bug"); }
 
     @Override
     public void execute(CommandSender sender, String[] args) {

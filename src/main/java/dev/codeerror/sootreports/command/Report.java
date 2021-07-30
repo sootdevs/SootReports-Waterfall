@@ -6,7 +6,7 @@ import net.md_5.bungee.api.plugin.Command;
 
 public class Report extends Command {
 
-    public Report() { super("Report"); }
+    public Report() { super("report"); }
 
     @Override
     public void execute(CommandSender sender, String[] args) {
