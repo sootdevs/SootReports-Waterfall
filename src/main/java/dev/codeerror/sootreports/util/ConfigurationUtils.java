@@ -8,6 +8,7 @@ import net.md_5.bungee.config.YamlConfiguration;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 
 public class ConfigurationUtils {
@@ -46,7 +47,7 @@ public class ConfigurationUtils {
 
             try {
 
-                Files.copy(Objects.requireNonNull(getClass().getResourceAsStream("/config.yml")), Path.of(configFile.getPath()));
+                Files.copy(Objects.requireNonNull(getClass().getResourceAsStream("/config.yml")), Paths.get(configFile.getPath()));
                 SootReports.getInstance().getLogger().info("Created default configuration!");
 
             } catch (Exception e) {
