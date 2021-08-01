@@ -9,17 +9,17 @@ load: STARTUP
 commands:
   report:
     description: Report command for SootReports.
-    permission: sootreports.report
+    permission: sootreports.command.report
     permission-message: §8[§1SootReports§8] §cYou do not have the appropriate permissions to perform this command.
     usage: /report <player> <reason>
   bug:
     description: Bug command for SootReports.
-    permission: sootreports.bug
+    permission: sootreports.command.bug
     permission-message: §8[§1SootReports§8] §cYou do not have the appropriate permissions to perform this command.
     usage: /bug <bug>
   suggest:
     description: Suggest command for SootReports.
-    permission: sootreports.suggest
+    permission: sootreports.command.suggest
     permission-message: §8[§1SootReports§8] §cYou do not have the appropriate permissions to perform this command.
     usage: /suggest <suggestion>
 permissions:
