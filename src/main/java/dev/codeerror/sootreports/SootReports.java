@@ -66,7 +66,7 @@ public class SootReports extends Plugin implements TabExecutor {
 
             if (args[0].equalsIgnoreCase("report")) {
 
-                List<ProxiedPlayer> players = new ArrayList<>(ProxyServer.getInstance().getServersCopy().get(((ProxiedPlayer) sender).getServer().toString()).getPlayers());
+                List<ProxiedPlayer> players = new ArrayList<>(((ProxiedPlayer) sender).getServer().getInfo().getPlayers());
                 List<String> playerNames = new ArrayList<>();
 
                 for (ProxiedPlayer player : players) {
