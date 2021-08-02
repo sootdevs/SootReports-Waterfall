@@ -85,11 +85,11 @@ public class Suggest extends Command {
 
         }
 
-        SootReports.getInstance().getWebhook().addEmbed(embed);
+        SootReports.getInstance().getSuggestionsWebhook().addEmbed(embed);
 
         try {
 
-            SootReports.getInstance().getWebhook().execute();
+            SootReports.getInstance().getSuggestionsWebhook().execute();
 
         } catch (Exception e) {
 
@@ -97,7 +97,7 @@ public class Suggest extends Command {
 
         }
 
-        SootReports.getInstance().getWebhook().removeEmbed(embed);
+        SootReports.getInstance().getSuggestionsWebhook().removeEmbed(embed);
 
     }
 

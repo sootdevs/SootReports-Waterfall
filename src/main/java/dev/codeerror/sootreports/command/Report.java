@@ -123,11 +123,11 @@ public class Report extends Command {
 
         embed.setThumbnail(new TydiumCraftAPI(target.getUniqueId().toString()).getSkinURL("body", null, "right"));
 
-        SootReports.getInstance().getWebhook().addEmbed(embed);
+        SootReports.getInstance().getReportsWebhook().addEmbed(embed);
 
         try {
 
-            SootReports.getInstance().getWebhook().execute();
+            SootReports.getInstance().getReportsWebhook().execute();
 
         } catch (Exception e) {
 
@@ -135,7 +135,7 @@ public class Report extends Command {
 
         }
 
-        SootReports.getInstance().getWebhook().removeEmbed(embed);
+        SootReports.getInstance().getReportsWebhook().removeEmbed(embed);
 
     }
 

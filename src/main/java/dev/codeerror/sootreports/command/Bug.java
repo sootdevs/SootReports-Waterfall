@@ -95,11 +95,11 @@ public class Bug extends Command {
 
         }
 
-        SootReports.getInstance().getWebhook().addEmbed(embed);
+        SootReports.getInstance().getBugsWebhook().addEmbed(embed);
 
         try {
 
-            SootReports.getInstance().getWebhook().execute();
+            SootReports.getInstance().getBugsWebhook().execute();
 
         } catch (Exception e) {
 
@@ -107,7 +107,7 @@ public class Bug extends Command {
 
         }
 
-        SootReports.getInstance().getWebhook().removeEmbed(embed);
+        SootReports.getInstance().getBugsWebhook().removeEmbed(embed);
 
     }
 
