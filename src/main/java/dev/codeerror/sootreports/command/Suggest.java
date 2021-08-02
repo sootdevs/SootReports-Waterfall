@@ -20,9 +20,7 @@ public class Suggest extends Command {
     @Override
     public void execute(CommandSender sender, String[] args) {
 
-        String suggestion = args[0];
-
-        if (suggestion.isEmpty()) {
+        if (args.length == 0) {
 
             if (sender instanceof ProxiedPlayer) {
 
@@ -37,6 +35,14 @@ public class Suggest extends Command {
             return;
 
         }
+
+        StringBuilder suggestionBuilder = new StringBuilder();
+
+        for (String word : args) {
+            suggestionBuilder.append(word).append(" ");
+        }
+
+        String suggestion = new String(suggestionBuilder).trim();
 
         if (sender instanceof ProxiedPlayer) {
 

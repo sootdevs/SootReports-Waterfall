@@ -20,9 +20,7 @@ public class Bug extends Command {
     @Override
     public void execute(CommandSender sender, String[] args) {
 
-        String bug = args[0];
-
-        if (bug.isEmpty()) {
+        if (args.length == 0) {
 
             if (sender instanceof ProxiedPlayer) {
 
@@ -37,6 +35,14 @@ public class Bug extends Command {
             return;
 
         }
+
+        StringBuilder bugBuilder = new StringBuilder();
+
+        for (String word : args) {
+            bugBuilder.append(word).append(" ");
+        }
+
+        String bug = new String(bugBuilder).trim();
 
         if (sender instanceof ProxiedPlayer) {
 
@@ -69,7 +75,7 @@ public class Bug extends Command {
 
         if (sender instanceof ProxiedPlayer) {
 
-            if (((ProxiedPlayer) sender).getServer().isConnected()) {
+            if (((ProxiedPlayer) sender).getServer() != null) {
 
                 embed.addField("Server", "`" + ((ProxiedPlayer) sender).getServer().getInfo().getName() + "`", false);
 
@@ -84,7 +90,6 @@ public class Bug extends Command {
 
         } else {
 
-            embed.addField("Server", "`Proxy`", false);
             embed.addField("Bug", bug, false);
             embed.addField("Reporter", "`CONSOLE`", false);
 
