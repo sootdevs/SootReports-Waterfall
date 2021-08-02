@@ -115,6 +115,7 @@ public class Report extends Command {
 
         } else {
 
+            embed.addField("Server", "`" + target.getServer().getInfo().getName() + "`", false);
             embed.addField("Accused", "`" + target.getName() + "`", false);
             embed.addField("Reason", "`" + reason + "`", false);
             embed.addField("Reporter", "`CONSOLE`", false);
