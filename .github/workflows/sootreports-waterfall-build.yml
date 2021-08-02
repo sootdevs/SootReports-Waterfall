@@ -24,4 +24,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: SootReports-Waterfall
-          path: build/libs/SootReports-Waterfall-1.0.jar
+          path: build/libs/SootReports-Waterfall-1.1.jar
