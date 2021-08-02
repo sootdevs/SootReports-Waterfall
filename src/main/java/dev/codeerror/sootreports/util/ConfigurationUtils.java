@@ -14,7 +14,7 @@ import java.util.Objects;
 public class ConfigurationUtils {
 
     private final String configName;
-    private static final Path dataFolder = SootReports.getInstance().getDataFolder().toPath();
+    private final Path dataFolder = SootReports.getInstance().getDataFolder().toPath();
 
     public ConfigurationUtils(String configName) {
 

@@ -22,9 +22,7 @@ public class SootReports extends Plugin implements TabExecutor {
 
     private static SootReports instance;
 
-    private final ConfigurationUtils configUtils = new ConfigurationUtils("config.yml");
-    private final Configuration config = configUtils.getConfig();
-    private final DiscordWebhook webhook = new DiscordWebhook(config.getString("discord-webhook"));
+    private DiscordWebhook webhook;
     private final TextComponent chatPrefix = buildChatPrefix();
 
     @Override
@@ -34,7 +32,9 @@ public class SootReports extends Plugin implements TabExecutor {
         instance = this;
 
         // Configuration
+        ConfigurationUtils configUtils = new ConfigurationUtils("config");
         configUtils.saveDefaultConfig();
+        Configuration config = configUtils.getConfig();
 
         // Commands
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new Report());
@@ -43,6 +43,7 @@ public class SootReports extends Plugin implements TabExecutor {
         this.getLogger().info("Successfully registered commands!");
 
         // Discord Webhook
+        webhook = new DiscordWebhook(config.getString("discord-webhook"));
         webhook.setAvatarUrl("https://cloud.sootmc.com/images/sootreportswebhook.png");
         webhook.setUsername("SootReports");
         this.getLogger().info("Successfully set up Discord Webhook!");
