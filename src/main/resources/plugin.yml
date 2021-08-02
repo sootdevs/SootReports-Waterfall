@@ -30,6 +30,7 @@ permissions:
       sootreports.command.report: true
       sootreports.command.bug: true
       sootreports.command.suggest: true
+      sootreports.notify.report: true
   sootreports.command.*:
     description: Grants access to report, bug and suggest commands.
     default: op
@@ -37,6 +38,11 @@ permissions:
       sootreports.command.report: true
       sootreports.command.bug: true
       sootreports.command.suggest: true
+  sootreports.notify.*:
+    description: Grants access to report, bug and suggest in-game notifications.
+    default: op
+    children:
+      sootreports.notify.report: true
   sootreports.command.report:
     description: Grants access to report command.
     default: op
@@ -45,4 +51,7 @@ permissions:
     default: op
   sootreports.command.suggest:
     description: Grants access to suggest command.
+    default: op
+  sootreports.notify.report:
+    description: Grants access to report in-game notifications.
     default: op
