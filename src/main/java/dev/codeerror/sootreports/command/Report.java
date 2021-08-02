@@ -12,6 +12,8 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Report extends Command {
 
@@ -83,6 +85,35 @@ public class Report extends Command {
             webhookReportPlayer(target, reason, sender);
             SootReports.getInstance().getLogger().info("CONSOLE created a new player report.");
 
+        }
+
+        List<ProxiedPlayer> mods = new ArrayList<>();
+
+        ComponentBuilder notification = new ComponentBuilder();
+        notification.append("[ALERT] ").color(ChatColor.RED);
+        notification.append("A new player report has been submitted:\n\n").color(ChatColor.YELLOW);
+        notification.append("Server: ").color(ChatColor.YELLOW).append(target.getServer().getInfo().getName() + "\n").color(ChatColor.RED);
+        notification.append("Accused: ").color(ChatColor.YELLOW).append(target.getName() + "\n").color(ChatColor.RED);
+        notification.append("Reason: ").color(ChatColor.YELLOW).append(reason + "\n").color(ChatColor.GRAY);
+
+        if (sender instanceof ProxiedPlayer) {
+
+            notification.append("Reporter: ").color(ChatColor.YELLOW).append(sender.getName() + "\n").color(ChatColor.RED);
+
+        } else {
+
+            notification.append("Reporter: ").color(ChatColor.YELLOW).append("CONSOLE\n").color(ChatColor.RED);
+
+        }
+
+        for (ProxiedPlayer player : ProxyServer.getInstance().getPlayers()) {
+            if (player.hasPermission("sootreports.notify.report")) {
+                mods.add(player);
+            }
+        }
+
+        for (ProxiedPlayer mod : mods) {
+            mod.sendMessage(chatPrefix, new TextComponent(notification.create()));
         }
 
     }
