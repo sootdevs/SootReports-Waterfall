@@ -1,3 +1,8 @@
-# SootReports-Waterfall v1.0 Configuration File
+# SootReports-Waterfall v1.1 Configuration File
 
-discord-webhook: "https://discord.com/api/webhooks/xxxxxxxxxxxxxxx/xxxxxxxxxxxxxxx"
+discord-webhook-reports: "https://discord.com/api/webhooks/xxxxxxxxxxxxxxx/xxxxxxxxxxxxxxx"
+discord-webhook-bugs: "https://discord.com/api/webhooks/xxxxxxxxxxxxxxx/xxxxxxxxxxxxxxx"
+discord-webhook-suggestions: "https://discord.com/api/webhooks/xxxxxxxxxxxxxxx/xxxxxxxxxxxxxxx"
+
+reports-role-id: "123456789"
+bugs-role-id: "123456789"
