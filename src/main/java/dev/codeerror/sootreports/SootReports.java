@@ -22,7 +22,10 @@ public class SootReports extends Plugin implements TabExecutor {
 
     private static SootReports instance;
 
-    private DiscordWebhook webhook;
+    private DiscordWebhook reportsWebhook;
+    private DiscordWebhook bugsWebhook;
+    private DiscordWebhook suggestionsWebhook;
+
     private final TextComponent chatPrefix = buildChatPrefix();
 
     @Override
@@ -42,14 +45,25 @@ public class SootReports extends Plugin implements TabExecutor {
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new Suggest());
         this.getLogger().info("Successfully registered commands!");
 
-        // Discord Webhook
-        webhook = new DiscordWebhook(config.getString("discord-webhook"));
-        webhook.setAvatarUrl("https://cloud.sootmc.com/images/sootreportswebhook.png");
-        webhook.setUsername("SootReports");
-        this.getLogger().info("Successfully set up Discord Webhook!");
+        // Discord Webhooks
+        reportsWebhook = new DiscordWebhook(config.getString("discord-webhook-reports"));
+        bugsWebhook = new DiscordWebhook(config.getString("discord-webhook-bugs"));
+        suggestionsWebhook = new DiscordWebhook(config.getString("discord-webhook-suggestions"));
+
+        reportsWebhook.setAvatarUrl("https://cloud.sootmc.com/images/sootreportswebhook.png");
+        bugsWebhook.setAvatarUrl("https://cloud.sootmc.com/images/sootreportswebhook.png");
+        suggestionsWebhook.setAvatarUrl("https://cloud.sootmc.com/images/sootreportswebhook.png");
+
+        reportsWebhook.setUsername("SootReports");
+        bugsWebhook.setUsername("SootReports");
+        suggestionsWebhook.setUsername("SootReports");
+
+        reportsWebhook.setContent(":rotating_light:  [**ALERT**]  `New Player Report!`  <@&" + config.getString("reports-role-id") + ">");
+        bugsWebhook.setContent(":cloud_lightning:  [**ALERT**]  `New Bug Report!`  <@&" + config.getString("bugs-role-id") + ">");
+        this.getLogger().info("Successfully set up Discord Webhooks!");
 
         // Completion
-        this.getLogger().info("SootReports v1.0 has been successfully enabled! Created by CodeError.");
+        this.getLogger().info("SootReports v1.1 has been successfully enabled! Created by CodeError.");
 
     }
 
@@ -86,7 +100,10 @@ public class SootReports extends Plugin implements TabExecutor {
 
     public static SootReports getInstance() { return instance; }
 
-    public DiscordWebhook getWebhook() { return webhook; }
+    public DiscordWebhook getReportsWebhook() { return reportsWebhook; }
+    public DiscordWebhook getBugsWebhook() { return bugsWebhook; }
+    public DiscordWebhook getSuggestionsWebhook() { return suggestionsWebhook; }
+
     private TextComponent buildChatPrefix() {
 
         ComponentBuilder builder = new ComponentBuilder();
