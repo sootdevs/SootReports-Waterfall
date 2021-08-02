@@ -40,7 +40,7 @@ public class Report extends Command {
 
         ProxiedPlayer target;
 
-        if (ProxyServer.getInstance().getPlayer(args[0]).isConnected()) {
+        if (ProxyServer.getInstance().getPlayer(args[0]) != null) {
 
             target = SootReports.getInstance().getProxy().getPlayer(args[0]);
 
@@ -99,7 +99,7 @@ public class Report extends Command {
 
         if (sender instanceof ProxiedPlayer) {
 
-            if (((ProxiedPlayer) sender).getServer().isConnected()) {
+            if (((ProxiedPlayer) sender).getServer() != null) {
 
                 embed.addField("Server", "`" + ((ProxiedPlayer) sender).getServer().getInfo().getName() + "`", false);
 
@@ -115,7 +115,6 @@ public class Report extends Command {
 
         } else {
 
-            embed.addField("Server", "`Proxy`", false);
             embed.addField("Accused", "`" + target.getName() + "`", false);
             embed.addField("Reason", "`" + reason + "`", false);
             embed.addField("Reporter", "`CONSOLE`", false);
