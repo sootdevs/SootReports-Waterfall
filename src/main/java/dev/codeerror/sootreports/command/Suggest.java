@@ -75,6 +75,16 @@ public class Suggest extends Command {
 
         if (sender instanceof ProxiedPlayer) {
 
+            if (((ProxiedPlayer) sender).getServer() != null) {
+
+                embed.addField("Server", "`" + ((ProxiedPlayer) sender).getServer().getInfo().getName() + "`", false);
+
+            } else {
+
+                embed.addField("Server", "`Null`", false);
+
+            }
+
             embed.addField("Suggestion", suggestion, false);
             embed.addField("Reporter", "`" + sender.getName() + "`", false);
 
