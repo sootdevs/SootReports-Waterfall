@@ -141,14 +141,14 @@ public class Report extends Command {
             }
 
             embed.addField("Accused", "`" + target.getName() + "`", false);
-            embed.addField("Reason", "`" + reason + "`", false);
+            embed.addField("Reason", reason, false);
             embed.addField("Reporter", "`" + sender.getName() + "`", false);
 
         } else {
 
             embed.addField("Server", "`" + target.getServer().getInfo().getName() + "`", false);
             embed.addField("Accused", "`" + target.getName() + "`", false);
-            embed.addField("Reason", "`" + reason + "`", false);
+            embed.addField("Reason", reason, false);
             embed.addField("Reporter", "`CONSOLE`", false);
 
         }
