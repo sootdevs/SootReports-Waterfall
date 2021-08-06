@@ -5,6 +5,7 @@
   A custom player/bug reports and suggestions plugin for the Waterfall proxy. Programmed for SootMC.
   
   <img src="https://img.shields.io/badge/language-java-%23ED8B00">
+  <img src="https://img.shields.io/badge/license-GPL--3.0-%23ED8B00">
   <img src="https://github.com/sootdevs/SootReports-Waterfall/workflows/SootReports-Waterfall/badge.svg">
 </div>
 
