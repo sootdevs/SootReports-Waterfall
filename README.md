@@ -1,5 +1,5 @@
 <div align=center>
-  <img src="https://cloud.sootmc.com/images/sootreportswebhook.png">
+  <img src="https://cloud.sootmc.com/images/sootreportswebhook.png#">
   
   # SootReports-Waterfall
   A custom player/bug reports and suggestions plugin for the Waterfall proxy. Programmed for SootMC.
