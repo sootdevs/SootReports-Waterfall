@@ -66,3 +66,8 @@ discord-webhook-suggestions: "https://discord.com/api/webhooks/xxxxxxxxxxxxxxx/x
 reports-role-id: "123456789"
 bugs-role-id: "123456789"
 ```
+
+### Credits
+- [CodeError](https://github.com/CodeTheDev) (Programmer of This Plugin)
+- [k3kdude](https://github.com/k3kdude) (Base for [DiscordWebhook](https://gist.github.com/k3kdude/fba6f6b37594eae3d6f9475330733bdb) Class)
+- [TydiumCraft](https://tydiumcraft.net/) ([Skin API Website](https://tydiumcraft.net/docs/skinapi))
