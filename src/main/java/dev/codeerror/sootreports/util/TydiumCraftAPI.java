@@ -10,7 +10,7 @@ public class TydiumCraftAPI {
 
     public String getSkinURL(@Nullable String type, @Nullable String size, @Nullable String flip) {
 
-        String baseURL = "https://api.tydiumcraft.net/skin?uuid=" + this.uuid;
+        String baseURL = "https://api.tydiumcraft.net/v1/players/skin?uuid=" + this.uuid;
         StringBuilder urlBuilder = new StringBuilder(baseURL);
 
         if (type == null) {
